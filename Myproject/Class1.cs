@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,6 +83,30 @@ namespace Myproject
                     Questions = "What is the capital of Japan?",
                     Options = new List<string>{ "(A) Beijing", "(B) Seoul", "(C) Tokyo", "(D) Bangdok"},
                     Answer = "C"
+                },
+                new Quiz()
+                {
+                    Questions = "What is the purpose of CSS?",
+                    Options = new List<string>{ "(A) To structure content on a webpage", "(B) To provide interactivity on a webpage", "(C) To style the appearance of content on a webpage", "(D) To define the behavior of content on a webpage"},
+                    Answer = "C"
+                },
+                new Quiz()
+                {
+                    Questions = "Which of the following is not a JavaScript framework or library?",
+                    Options = new List<string>{ "(A) Angular", "(B) React", "(C) Django", "(D) Vue.Js" },
+                    Answer = "C"
+                },
+                new Quiz()
+                {
+                    Questions = "Which of the following is a relational database management system?",
+                    Options = new List<string>{ "(A) MongoDB", "(B) PostgreSQL", "(C) Redis", "(D) Cassandra"},
+                    Answer = "B"
+                },
+                new Quiz()
+                {
+                    Questions = "Which of the following data structures follows the Last In, First Out (LIFO) principle?",
+                    Options = new List<string>{"(A) Queue", "(B) Stack", "(C) Linked List", "(D) Binary Tree"},
+                    Answer = "B"
                 }
             };
             var shuffle = new Random();
@@ -137,7 +162,7 @@ namespace Myproject
         }
         public static void QuizRestart()
         {
-            Console.WriteLine("Do you want to try again?");
+            Console.WriteLine("Do you want to restart the game?");
             Console.WriteLine("Enter Y for yes or N for No:");
             string restart = Console.ReadLine();
             if (restart.ToUpper() == "Y")
