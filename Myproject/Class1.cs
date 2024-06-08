@@ -169,6 +169,7 @@ namespace Myproject
             string restart = Console.ReadLine();
             if (restart.ToUpper() == "Y")
             {
+                Console.Clear();
                 QuizData();
                 QuizLogic();
             }
