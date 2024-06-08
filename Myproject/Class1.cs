@@ -140,6 +140,7 @@ namespace Myproject
                     {
                         Console.WriteLine("Correct!");
                         score++;
+                        Console.Clear();
                     }
                 else
                 { 
@@ -149,13 +150,14 @@ namespace Myproject
                         string quizcontinue = Console.ReadLine()?.ToUpper();
                         if (quizcontinue == "Y")
                         {
+                            Console.Clear();
                             continue;
                         }
                         else
                         {
                             break;
                         }
-                    }  
+                    }
                 
             }
             Console.WriteLine("You scored " + score);
