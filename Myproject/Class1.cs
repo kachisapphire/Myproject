@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Myproject
+// This project is a console based quiz game
 {
-    internal class Quiz
+    public class Quiz
     {
-        public string? Questions { get; set; }
-        public List<string>? Options { get; set; }
-        public string? Answer { get; set; }
+        public string Questions { get; set; }
+        public List<string> Options { get; set; }
+        public string Answer { get; set; }
         private static List<Quiz> quiz = new List<Quiz>();
         public static void QuizData()
         {
@@ -109,6 +110,8 @@ namespace Myproject
                     Answer = "B"
                 }
             };
+            // var shuffle uses the system method Random to generate a random number
+            //which shuffles the quiz questions each time the game is restarted.
             var shuffle = new Random();
             shuffledList = shuffledList.OrderBy(x => shuffle.Next()).ToList();
             quiz = shuffledList;
@@ -126,6 +129,8 @@ namespace Myproject
                 Console.WriteLine("Select an option:");
                 string result;
                 bool selection;
+                // this loop ensures that this operation continues running
+                //unless user enters a valid selection from A-D
                 do
                 {
                     result = Console.ReadLine().ToUpper();
@@ -136,6 +141,8 @@ namespace Myproject
                     }
                 }
                 while (!selection);
+                // this block of code checks if the input is right one regardless 
+                // of the lettercase that was entered. 
                 if (result == question.Answer?.ToUpper())
                     {
                         Console.WriteLine("Correct!");
@@ -147,7 +154,7 @@ namespace Myproject
                         Console.WriteLine("Incorrect");
                         Console.WriteLine("Do you want to continue?");
                         Console.WriteLine("Enter Y for Yes or N for No:");
-                        string quizcontinue = Console.ReadLine()?.ToUpper();
+                        string quizcontinue = Console.ReadLine().ToUpper();
                         if (quizcontinue == "Y")
                         {
                             Console.Clear();
